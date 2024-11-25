@@ -13,7 +13,7 @@ pipeline {
             }
             steps {
                 sh 'docker --context=testserver login -u jenkins -p ${MSR_ACCESS_KEY} ${MSR_FQDN_PORT}'
-                sh 'docker --context=testserver image pull ${MSR_FQDN_PORT}/repositories/engineering/api-test:${TAG}'
+                sh 'docker --context=testserver image pull ${MSR_FQDN_PORT}/engineering/api-test:${TAG}'
                 sh 'kubectl run $(echo $TAG | tr . -) \
                      -n testing \
                      --restart=Never --attach=True \
