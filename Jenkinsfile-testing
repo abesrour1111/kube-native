@@ -71,9 +71,7 @@ pipeline {
             }
         }
     }
-/bin/bash: q: command not found
 
-    }
 
     post {
         always{
